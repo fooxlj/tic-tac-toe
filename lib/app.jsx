@@ -3,26 +3,25 @@
 var React = require('react');
 
 //CSS styl efor the button
-var buttonStyle = {
-    'height': '100px',
-    'width': '100px'
-};
+//var buttonStyle = {
+//    'height': '100px',
+//    'width': '100px'
+//};
 
 var Box = React.createClass({
     /**
      * Render a HTML button
      * @return {ReactElement}
      */
-        'getInitialState':function onGetInitialState(){
-        return {
-            "value": this.props.initialValue
-        }
-
-
-        },
+        //'getInitialState':function onGetInitialState(){
+        //return {
+        //    "value": this.props.initialValue
+        //}
+    //},
         'render': function onRender () {
             return (
-                <button style={buttonStyle}>{this.props.value}</button>
+                <button>{this.props.value}</button>
+               // <button style={buttonStyle}>{this.props.value}</button>
             )
         }
 
