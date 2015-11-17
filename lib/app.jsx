@@ -21,7 +21,7 @@ var Box = React.createClass({
 
     handleClick: function() {
         var serf = this;
-        serf.setState({'value': serf.state.value =='X' ? 'O' : 'X'});
+        serf.setState({'value': serf.state.value =='-' ? 'O' : '-'});
     },
 
 
@@ -35,13 +35,18 @@ var Box = React.createClass({
 
 
 var Row = React.createClass({
-
+    'getInitialState':function onGetInitialState() {
+        return {
+            "results": [1, 2, 3]
+        };
+    },
     'render': function onRender (){
+        var results = this.state.results;
         return (
             <div>
-                <Box/>
-                <Box/>
-                <Box/>
+                {results.map(function(result) {
+                    return <Box key={result.id} initialValue='-'>{result.text}</Box>;
+                })}
             </div>
         );
 
