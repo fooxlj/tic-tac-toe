@@ -49,9 +49,21 @@ var Row = React.createClass({
                 })}
             </div>
         );
-
     }
 });
 
+var Grid = React.createClass({
+    
+    'render': function onRender (){
+        return(
+            <div>
+                <Row/>
+                <Row/>
+                <Row/>
+            </div>
+        )
+
+    }
+});
 // here we ask React to add the component Box into the body
-React.render(<Row/>, document.body);
+React.render(<Grid/>, document.body);
