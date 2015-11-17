@@ -13,7 +13,7 @@ var Box = React.createClass({
      * Render a HTML button
      * @return {ReactElement}
      */
-        'getInitialState':function onGetInitialState(){
+    'getInitialState':function onGetInitialState(){
         return {
             "value": this.props.initialValue
         }
@@ -53,16 +53,20 @@ var Row = React.createClass({
 });
 
 var Grid = React.createClass({
-    
+    'getInitialState':function onGetInitialState() {
+        return {
+            "results": [1, 2, 3]
+        };
+    },
     'render': function onRender (){
-        return(
+        var results = this.state.results;
+        return (
             <div>
-                <Row/>
-                <Row/>
-                <Row/>
+                {results.map(function(result) {
+                    return <Row key={result.id}>{result.text}</Row>;
+                })}
             </div>
-        )
-
+        );
     }
 });
 // here we ask React to add the component Box into the body
