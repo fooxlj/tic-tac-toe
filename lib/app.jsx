@@ -3,10 +3,10 @@
 var React = require('react');
 
 //CSS styl efor the button
-//var buttonStyle = {
-//    'height': '100px',
-//    'width': '100px'
-//};
+var buttonStyle = {
+    'height': '100px',
+    'width': '100px'
+};
 
 var Box = React.createClass({
     /**
@@ -20,8 +20,7 @@ var Box = React.createClass({
     //},
         'render': function onRender () {
             return (
-                <button>{this.props.value}</button>
-               // <button style={buttonStyle}>{this.props.value}</button>
+                <button style={buttonStyle}>{this.props.value}</button>
             )
         }
 
