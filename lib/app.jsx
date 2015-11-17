@@ -52,22 +52,6 @@ var Row = React.createClass({
     }
 });
 
-var Grid = React.createClass({
-    'getInitialState':function onGetInitialState() {
-        return {
-            "results": [1, 2, 3]
-        };
-    },
-    'render': function onRender (){
-        var results = this.state.results;
-        return (
-            <div>
-                {results.map(function(result) {
-                    return <Row key={result.id}>{result.text}</Row>;
-                })}
-            </div>
-        );
-    }
-});
+
 // here we ask React to add the component Box into the body
-React.render(<Grid/>, document.body);
+React.render(<Row/>, document.body);
