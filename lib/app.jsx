@@ -18,25 +18,35 @@ var Box = React.createClass({
             "value": this.props.initialValue
         }
     },
-        handleOnclick: function() {
-            var serf = this;
-            serf.setState({'value' : serf.state.value =='X'? '0':'X'});
-        },
 
-    componentDidMount: function() {
-        window.addEventListener('click', this.handleOnclick);
+    handleClick: function() {
+        var serf = this;
+        serf.setState({'value': serf.state.value =='X' ? 'O' : 'X'});
     },
 
-    componentWillUnmount: function() {
-        window.removeEventListener('click', this.handleOnclick);
-    },
-        'render': function onRender () {
-            return (
-                <button style={buttonStyle} onclick={this.handleOnclick}>{this.state.value}</button>
-            )
-        }
+
+    'render': function onRender () {
+        return (
+            <button style={buttonStyle} onClick={this.handleClick}>{this.state.value}</button>
+        );
+    }
 
 });
 
+
+var Row = React.createClass({
+
+    'render': function onRender (){
+        return (
+            <div>
+                <Box/>
+                <Box/>
+                <Box/>
+            </div>
+        );
+
+    }
+});
+
 // here we ask React to add the component Box into the body
-React.render(<Box value='X'/>, document.body);
+React.render(<Row/>, document.body);
